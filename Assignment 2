@@ -1,0 +1,34 @@
+a=int(input("enter a number="))
+b=int(input("enter a number="))
+c=int(input("enter a number="))
+total=(a+b+c)/3
+print(total)
+
+x=int(input("enter gross income="))
+y=int(input("enter no. of dependents="))
+z=int(10000)
+d=x-z-(3000*y)
+p:float=0.2*d
+if p<0:
+    print("0")
+elif p>0:
+    print(p)
+    
+e=int(input("enter no. of seconds="))
+f=e%60
+g=e//60
+print(str(c)+"minutes"+str(b)+"seconds")
+
+h=float(input("enter a number="))
+i=float(input("enter another number="))
+j=float(input("enter another number="))
+total=(h+i+j)
+total=int (total)
+print(total)
+
+import math
+angle=0
+for angle in range(0, 360,15):
+    sin=round(math.sin(math.radians(angle)),4)
+    cos=round(math.cos(math.radians(angle)),4)
+    print(str(angle)+"___"+str(sin)+","+str(cos))
