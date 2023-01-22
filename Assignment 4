@@ -1,0 +1,51 @@
+a = int(input("enter your marks = "))
+if(a<25):
+    print("F")
+elif(25<=a<45):
+    print("E")
+elif(45<=a<50):
+    print("D")
+elif(50<=a<60):
+    print("C")
+elif(60<=a<80):
+    print("B")
+elif(a>=80):
+    print("A")
+    
+n = int(input("enter year = "))
+if n%100 == 0:
+    if n%400 == 0:
+        print("leap year")
+    else:
+        print ("not a leap year")
+elif n%4 == 0:
+    print("leap year")
+else:
+    print("not a leap year")
+    
+import random
+import math
+
+count=0
+while count<10:
+    count=count+1
+    num1 = random.randint(1,10)
+    num2 = random.randint(1,10)
+    guess= int(input("what is " + str(num1)+ "x" + str(num2) + "="))
+    ans = int(num1*num2)
+    correct = guess == ans
+    if (guess == ans):
+        print("correct")
+    else:
+        print("wrong, the answer is "+str(ans)+".")
+        
+for i in range(200): 
+    if i%5!=2:  
+      continue 
+    if i%6!=3:  
+      continue 
+    if i%7!=2: 
+      continue 
+    print(int(i) , " is the answer!")
+    break 
+ 
