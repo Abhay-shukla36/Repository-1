@@ -1,0 +1,120 @@
+t = 0
+a = int(input('enter a number = '))
+for i in range(1, a):
+    if a % i == 0:
+        t = t + i
+    else:
+        continue
+if t == a:
+    print(str(a) + " is a perfect number.")
+else:
+    print(str(a) + " is not a perfect number.")
+
+
+a = str(input('enter a line = '))
+if a == a[::-1]:
+    print(str(a) + ' is a palindrome.')
+else:
+    print(str(a) + 'is not a palindrome.')
+
+
+
+import math
+
+a = int(input('enter a number = '))
+for i in range(0, a):
+    number = math.factorial(a - 1) / (math.factorial(i) * math.factorial(a - i - 1))
+    print(str(int(number)) + "  ", end='')
+
+
+
+
+def line(b):
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    for char in alphabet:
+        if char not in b.lower():
+            return False
+    return True
+
+
+a = str(input("enter a line = "))
+if line(a):
+    print("Yes")
+else:
+    print("No")
+
+
+
+
+items=[n for n in input('ENTER WORDS SEPARATING THEM WITH - = ').split('-')]
+items.sort()
+print('-'.join(items))
+
+
+def student_data(student_id, **kwargs):
+    print(f'\nStudent ID: {student_id}')
+    if 'student_name' in kwargs:
+        print(f"Student Name: $ {kwargs['student_name']}")
+
+    if 'student_name' and 'student_class' in kwargs:
+        print(f"\nStudent Name: $ {kwargs['student_name']}")
+        print(f"Student Class: $ {kwargs['student_class']}")
+
+
+student_data(student_id='043', student_name='bhavik gupta')
+
+student_data(student_id='043', student_name='bhavik gupta', student_class='V')
+
+
+class Student:
+    pass
+class Marks:
+    pass
+student1 = Student()
+marks1 = Marks()
+print(isinstance(student1, Student))
+print(isinstance(marks1, Student))
+print(isinstance(marks1, Marks))
+print(isinstance(student1, Marks))
+print("\nCheck whether the said classes are subclasses of the built-in object class or not.")
+print(issubclass(Student, object))
+print(issubclass(Marks, object))
+
+
+class py_solution:
+ def threeSum(self, nums):
+        nums, result, i = sorted(nums), [], 0
+        while i < len(nums) - 2:
+            j, k = i + 1, len(nums) - 1
+            while j < k:
+                if nums[i] + nums[j] + nums[k] < 0:
+                    j += 1
+                elif nums[i] + nums[j] + nums[k] > 0:
+                    k -= 1
+                else:
+                    result.append([nums[i], nums[j], nums[k]])
+                    j, k = j + 1, k - 1
+                    while j < k and nums[j] == nums[j - 1]:
+                        j += 1
+                    while j < k and nums[k] == nums[k + 1]:
+                        k -= 1
+            i += 1
+            while i < len(nums) - 2 and nums[i] == nums[i - 1]:
+                i += 1
+        return result
+
+print(py_solution().threeSum([-25, -10, -7, -3, 2, 4, 8, 10]))
+
+
+a=str(input("enter format of bracket = "))
+class py_solution:
+   def is_valid_parenthese(self, str1):
+        stack, pchar = [], {"(": ")", "{": "}", "[": "]"}
+        for parenthese in str1:
+            if parenthese in pchar:
+                stack.append(parenthese)
+            elif len(stack) == 0 or pchar[stack.pop()] != parenthese:
+                return False
+        return len(stack) == 0
+
+print(py_solution().is_valid_parenthese(a))
